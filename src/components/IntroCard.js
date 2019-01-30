@@ -8,7 +8,7 @@ class IntroCard extends Component {
           <p className="f6 f5-ns lh-copy measure mv0">
             Kurt Bauer is latinx, a full-stack software engineer, web & mobile designer,
             writer, artist, photographer, progressive activist,
-            and probably will always have a faster site than you.  
+            and will always have a faster site than you.  
           </p>
         </div>
       </article>}
