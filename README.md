@@ -1,5 +1,6 @@
-# Kurt Bauer
-
+<h1 align="center">
+ Kurt Bauer
+</h1>
 Probably better than you at typing really fast on the keyboard.
 
 ## Tech Stack
