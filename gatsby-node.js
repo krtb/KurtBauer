@@ -1,64 +1,97 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require('path');
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = ({ graphql, actions}) => {
+  const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            allPosts: allMarkdownRemark(
+            filter: {frontmatter: {type: {eq: "post"}}},
+            sort: {fields: frontmatter___date, order: DESC},
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    slug
+                  }
+                }
               }
-              frontmatter {
-                title
+              group(field: frontmatter___category) {
+                fieldValue
+                edges {
+                  node {
+                    frontmatter {
+                      slug
+                    }
+                  }
+                }
               }
             }
           }
+        `
+      ).then(result => {
+        if (result.errors) {
+          reject(result.errors)
         }
-      }
-    `
-  ).then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
+        const allPosts = result.data.allPosts.edges;
+        const groupedPosts = result.data.allPosts.group;
+        const paginationTemplate = path.resolve('src/blog/index.js');
+        const postsPerPage = 10;
+        let numPages = Math.ceil(allPosts.length / postsPerPage);
 
-    // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+        // Creating the main blog index
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? '/blog' : `/blog/${i + 1}`,
+            component: paginationTemplate,
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              nextPage: `/blog/${i + 2}`,
+              pageNumber: i + 1,
+            }
+          })
+        })
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+        // Creating all category pages.
+        let category;
+        let categoryPosts;
+        const categoryTemplate = path.resolve('src/blog/category.js');
+        groupedPosts.forEach((group, _) => {
+          category = group.fieldValue;
+          categoryPosts = group.edges;
+          numPages = Math.ceil(categoryPosts.length / postsPerPage);
+          Array.from({ length: numPages }).forEach((_, i) => {
+            createPage({
+              path: i === 0 ? `/${category}` : `/${category}/${i + 1}`,
+              component: categoryTemplate,
+              context: {
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                nextPage: `/${category}/${i + 2}`,
+                pageNumber: i + 1,
+                category: category,
+              }
+            })
+          })
+        })
 
-      createPage({
-        path: post.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
+        // Create all the blog post pages.
+        const template = path.resolve('src/blog/post.js');
+        allPosts.forEach(({ node }) => {
+          let slug = node.frontmatter.slug;
+          createPage({
+            path: slug,
+            component: template,
+            context: {
+              slug,
+            }
+          })
+        })
       })
-    })
+    )
   })
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
 }

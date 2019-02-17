@@ -1,78 +1,120 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    navbarLinks: [
+      {to: "/makeup", name: "Makeup"},
+      {to: "/lifestyle", name: "Lifestyle"},
+      {to: "/blog", name: "blog"},
+    ],
+    title: "TYRA",
+    description: "Tyra is a fast, feminine, and chic Gatsby.js theme.",
+    siteUrl: "https://tyra-starter.netlify.com",
+    homepageHeader: "Welcome to Your New Blog",
+    homepageAbout: "Tyra is a modern, sleek and feminine Gatsby.js theme. Easily create a beautiful and fast blog and draw attention to your stellar content.",
+    mailChimpUrl: "https://mailchimp.com",
+    mailChimpToken: "MAILCHIMP TOKEN HERE",
+    pinterest: "", // YOUR PINTEREST PROFILE HERE
+    facebook: "", // YOUR FACEBOOK PROFILE HERE
+    twitter: "", // YOUR TWITTER PROFILE HERE
   },
   plugins: [
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-feed',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+        feeds: [
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
             },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] },
+                filter: {frontmatter: {type: {eq: "post"}}}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    frontmatter {
+                      slug
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: "/rss.xml",
+            title: "Gatsby RSS Feed",
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        path: `${__dirname}/content`,
+        name: 'content',
       },
     },
-    `gatsby-plugin-feed`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-transformer-remark',
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
-      },
+        plugins: [
+          'gatsby-remark-copy-linked-files',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1400,
+            },
+          },
+        ],
+      }
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        google: {
+          families: ['Karla', 'Playfair Display', 'Lora']
+        }
+      }
     },
-  ],
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: "",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/success'],
+        cookieDomain: "tyra-starter.netlify.com",
+      }
+    }
+  ]
 }

@@ -1,68 +1,87 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import Layout from '../common/layouts';
+import { graphql } from 'gatsby';
+import Hero from '../homepage/components/hero';
+import Card from '../homepage/components/card';
+import About from '../homepage/components/about';
+import Bio from '../homepage/components/bio';
+import Seo from '../common/seo';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
-      </Layout>
-    )
-  }
+export default ({ data }) => {
+  let post = data.featuredPost.edges[0].node;
+  return (
+    <Layout>
+      <Seo
+        title={"Home Page"}
+        description={data.site.siteMetadata.description} />
+      <Hero
+        title={post.frontmatter.title}
+        image={post.frontmatter.postImage.childImageSharp.fluid}
+        to={post.frontmatter.slug}
+        description={post.frontmatter.description} />
+      <div className="flex flex-wrap center mw9 justify-around pb3">
+        {data.cards.edges.map(({node}) => (
+          <Card
+            title={node.frontmatter.title}
+            image={node.frontmatter.postImage.childImageSharp.fluid}
+            to={node.frontmatter.slug}
+            description={node.frontmatter.description} />
+        ))}
+      </div>
+      <About />
+      <Bio />
+    </Layout>
+  )
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
+export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    featuredPost: allMarkdownRemark(
+      limit: 1,
+      sort: {order: DESC, fields: frontmatter___date},
+      filter: {frontmatter: {type: {eq: "post"}}}) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
-          }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
+            description: metaDescription
+            slug
+            postImage {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
+      }
+    }
+    cards: allMarkdownRemark(
+      skip: 1,
+      limit: 3,
+      sort: {order: DESC, fields: frontmatter___date},
+      filter: {frontmatter: {type: {eq: "post"}}}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            description: metaDescription
+            slug
+            postImage {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        description
       }
     }
   }
