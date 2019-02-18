@@ -9,12 +9,9 @@ import Bio from '../homepage/components/bio';
 import First from '../homepage/components/first'
 
 export default ({ data }) => {
-  let post = data.featuredPost.edges[0].node;
+  // let post = data.featuredPost.edges[0].node;
   return (
-    <Layout>
       <First/>
-      <Bio />
-    </Layout>
   )
 }
 
