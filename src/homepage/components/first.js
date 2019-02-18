@@ -3,16 +3,20 @@ import React, { Component } from 'react'
 export default class first extends Component {
   render() {
     return (
-            <article class="center mw5 mw6-ns hidden ba mv4">
-                <h1 class="f4 bg-near-black white mv0 pv2 ph3">Title of card</h1>
-                <div class="pa3 bt">
-                    <p class="serif f6 f5-ns lh-copy measure mv0">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                        vero eos et accusam et justo duo dolores et ea rebum.
-                    </p>
+        <article>
+            <header class="bg-gold sans-serif">
+                <div class="mw9 center pa4 pt5-ns ph7-l">
+                    <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+                        <span class="bg-black-90 lh-copy white pa1 tracked-tight">
+                            Hi, I'm Kurt Bauer.
+                        </span>
+                        <span class="bg-black-90 lh-copy white pa1 tracked-tight">
+                            I'm a software engineer and mobile app developer.
+                        </span>
+                    </h3>
                 </div>
-            </article>
+            </header>
+        </article>
     )
   }
 }
