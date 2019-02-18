@@ -5,30 +5,14 @@ import Hero from '../homepage/components/hero';
 import Card from '../homepage/components/card';
 import About from '../homepage/components/about';
 import Bio from '../homepage/components/bio';
-import Seo from '../common/seo';
+// import Seo from '../common/seo';
+import First from '../homepage/components/first'
 
 export default ({ data }) => {
   let post = data.featuredPost.edges[0].node;
   return (
     <Layout>
-      <Seo
-        title={"Home Page"}
-        description={data.site.siteMetadata.description} />
-      <Hero
-        title={post.frontmatter.title}
-        image={post.frontmatter.postImage.childImageSharp.fluid}
-        to={post.frontmatter.slug}
-        description={post.frontmatter.description} />
-      <div className="flex flex-wrap center mw9 justify-around pb3">
-        {data.cards.edges.map(({node}) => (
-          <Card
-            title={node.frontmatter.title}
-            image={node.frontmatter.postImage.childImageSharp.fluid}
-            to={node.frontmatter.slug}
-            description={node.frontmatter.description} />
-        ))}
-      </div>
-      <About />
+      <First/>
       <Bio />
     </Layout>
   )
