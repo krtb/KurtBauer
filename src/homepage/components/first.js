@@ -4,13 +4,14 @@ export default class first extends Component {
   render() {
     return (
         <main>
-            <nav class="pa3 pa4-ns">
-                <a class="sans-serif link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="#" title="Home">Kurt Bauer</a>
-                <div class="tc pb3">
-                    <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Home">Home</a>
-                    {/* <a class="link dim gray f6 f5-ns dib mr3" href="#" title="About">About</a> */}
-                    <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Store">Work</a>
-                    <a class="link dim gray f6 f5-ns dib" href="#" title="Contact">Contact</a>
+            <nav class="dt w-100 border-box pa3 ph5-ns">
+              <a class="dtc v-mid mid-gray link dim w-25" href="#" title="Home">
+                <img src={require('../../images/nodoubt.jpg')} class="dib w2 h2 br-100" alt="Site Name"/>
+              </a>
+                <div class="dtc v-mid w-75 tr">
+                  <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="#" title="About">ABOUT</a>
+                  <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="#" title="Store">PORTFOLIO</a>
+                  <a class="link dim dark-gray f6 f5-ns dib" href="#" title="Contact">CONTACT ME</a>
                 </div>
             </nav>
             <article class="center mw5 mw6-ns hidden ba mv4">
