@@ -1,17 +1,13 @@
-import React from "react"
-import Layout from '../common/layouts';
-import { graphql } from 'gatsby';
-import Hero from '../homepage/components/hero';
-import Card from '../homepage/components/card';
-import About from '../homepage/components/about';
-import Bio from '../homepage/components/bio';
-// import Seo from '../common/seo';
-import First from '../homepage/components/first'
+import React from "react";
+import Layout from '../common/layouts/index';
+import MainBlurb from '../homepage/mainBlurb';
+import 'tachyons'
 
 export default ({ data }) => {
   // let post = data.featuredPost.edges[0].node;
   return (
-      <First/>
+      <Layout>
+      </Layout>
   )
 }
 
