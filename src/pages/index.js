@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from '../common/layouts/index';
-import MainBlurb from '../homepage/mainBlurb';
 import 'tachyons'
 
 export default ({ data }) => {
