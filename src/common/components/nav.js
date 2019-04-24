@@ -13,27 +13,27 @@ export default () => (
             class=" br3 ba b--black-10 h3 w3"
             alt="Site Name"
         />
-        <h1 className="f5 f4-ns fw6 black-70">Kurt Bauer</h1>
-        <h2 className="f6 black-70 fw2 ttu tracked" > New York</h2>
+        <h1 className="sans-serif f5 f4-ns fw6 black-70">Kurt Bauer</h1>
+        <h2 className="sans-serif f6 black-70 fw2 ttu tracked"> New York</h2>
     </a>
 
     <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
       <a
-        className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+        className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
         href="#"
         title="Work"
       >
         Work
       </a>
       <a
-        className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+        className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
         href="#"
         title="About"
       >
         About
       </a>
       <a
-        className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+        className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
         href="#"
         title="Contact"
       >
