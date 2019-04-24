@@ -1,14 +1,18 @@
 import React from 'react';
-import Navbar from '../components/nav';
-import MainBlurb from '../../homepage/mainBlurb'
 import 'tachyons';
 import '../styles/custom.tachyons.css';
+
+import Navbar from '../components/nav';
+import MainBlurb from '../../homepage/mainBlurb'
+import AlbumCards from '../../homepage/AlbumCards';
+
 
 
 export default (props) => (
   <React.Fragment>
     <Navbar/>
     <MainBlurb />
+    <AlbumCards />
   </React.Fragment>
 )
 
