@@ -3,7 +3,7 @@ import React from 'react';
 const AlbumCards = () => {
     return (
         <article>
-            <h2 class="f3 fw4 pa3 mv0">Albums</h2>
+            <h2 class="f3 fw4 pa3 mv0">MY WORK</h2>
             <div class="cf pa2">
                 <div class="fl w-50 w-25-m w-20-l pa2">
                     <a href="https://geo.itunes.apple.com/us/album/blonde/id1146195596?at=1l3vqFJ&mt=1&app=music" class="db link dim tc">
