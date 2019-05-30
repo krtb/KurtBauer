@@ -5,7 +5,7 @@ import '../styles/custom.tachyons.css';
 import Navbar from '../components/nav';
 import MainBlurb from '../../homepage/mainBlurb'
 import AlbumCards from '../../homepage/AlbumCards';
-
+import ContactMe from '../../homepage/ContactMe';
 
 
 export default (props) => (
@@ -13,6 +13,7 @@ export default (props) => (
     <Navbar/>
     <MainBlurb />
     <AlbumCards />
+    <ContactMe />
   </React.Fragment>
 )
 
