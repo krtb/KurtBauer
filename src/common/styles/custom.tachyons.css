@@ -118,3 +118,8 @@
   background-color: #eee;
   white-space: pre-wrap;
 }
+
+/* styles for email text in contact me */
+.b {
+  font-size: 25px;
+}
