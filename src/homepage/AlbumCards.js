@@ -45,7 +45,7 @@ const AlbumCards = () => {
                     </a>
                 </article>
             </a>
-            <a target="_blank" href="http://fabrikant.eachscape.com/">
+            <a target="_blank" href="https://github.com/krtb/Crypto_Crash">
                 <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
                     <div class="aspect-ratio aspect-ratio--1x1">
                         <img src={Cryptimg}
