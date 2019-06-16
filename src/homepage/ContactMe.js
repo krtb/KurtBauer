@@ -13,6 +13,7 @@ const ContactMe = () => {
                 </h2>
             </header>
             <footer class="pv4 ph3 tc sans-serif">
+                {/* TODO: revisit this item */}
             {/* <div class="ph3 ph4-ns pv6 bt b--black-10 black-70">
                 <a href="mailto:" class="link b f3 f2-ns dim black-70 lh-solid">kurtbauer55@protonmail.com</a>
                 <p class="f6 db b ttu lh-solid">Let's talk</p>
