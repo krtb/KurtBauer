@@ -1,6 +1,6 @@
 import FabrikantImg from '../common/images/fabrikantpage.jpg'
 import YoutubeImg from '../common/images/youtubepage.png'
-import Eimg from '../common/images/enewspage.png'
+import Eimg from '../common/images/enews.png'
 import Cryptimg from '../common/images/crypto_crashpage.png'
 import Informee from '../common/images/InforMeepage.png'
 
