@@ -34,7 +34,7 @@ export default () => (
       </a>
       <a
         className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
-        href="#"
+        href="#get in touch"
         title="Contact"
       >
         Get In Touch
