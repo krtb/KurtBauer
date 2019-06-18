@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../../common/images/nodoubt.jpg'
+import PDF from '../../../kurtbauer_resume_5.17.19.pdf'
 
 export default () => (
   <nav className="db dt-l w-100 border-box pa3 ph5-l">
@@ -27,8 +28,8 @@ export default () => (
       </a>
       <a
         className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
-        href="#"
-        src="kurtbauer_resume_5.17.19"
+        href={PDF}
+        target="_blank"
         title="Resume"
       >
         Resume
