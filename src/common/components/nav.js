@@ -15,7 +15,7 @@ export default () => (
             alt="Site Name"
         />
         <h1 className="sans-serif f5 f4-ns fw6 black-70">Kurt Bauer</h1>
-        <h2 className="sans-serif f6 black-70 fw2 ttu tracked"> New York</h2>
+        <h2 className="sans-serif f6 black-70 fw2 ttu tracked">Full-Stack Software Engineer</h2>
     </a>
 
     <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">

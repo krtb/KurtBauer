@@ -8,7 +8,7 @@ import React from 'react';
 
 const AlbumCards = () => {
     return (
-        <section class="cf w-100 pa2-ns">
+        <section class="cf w-100 pa2-ns sans-serif">
             <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
             <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
                 <div class="aspect-ratio aspect-ratio--1x1">
