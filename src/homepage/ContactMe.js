@@ -8,7 +8,7 @@ const ContactMe = () => {
                 <h1 class="f5 f4-m f3-l fw2 black-90 mt0 lh-copy">
                     kurtbauer55@protonmail.com
                 </h1>
-                <h2 id='lets talk' class="f5 f4-m f3-l fw2 black-50 mt0 lh-copy">
+                <h2 id="let's talk" class="f5 f4-m f3-l fw2 black-50 mt0 lh-copy">
                     let's talk
                 </h2>
             </header>
