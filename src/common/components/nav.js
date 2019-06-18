@@ -20,7 +20,7 @@ export default () => (
     <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
       <a
         className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
-        href="#"
+        href="#work"
         title="Work"
       >
         Work
@@ -28,9 +28,10 @@ export default () => (
       <a
         className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
         href="#"
-        title="About"
+        src="kurtbauer_resume_5.17.19"
+        title="Resume"
       >
-        About
+        Resume
       </a>
       <a
         className="sans-serif link dim dark-gray f6 f5-l dib mr3 mr4-l"
