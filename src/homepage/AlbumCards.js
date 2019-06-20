@@ -8,68 +8,129 @@ import React from 'react';
 
 const AlbumCards = () => {
     return (
-        <section class="cf w-100 pa2-ns sans-serif">
-            <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
-            <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div class="aspect-ratio aspect-ratio--1x1">
-                    <img src={FabrikantImg}
-                        class="db bg-center cover aspect-ratio--object" />
+      <article class="sans-serif" >
+        <h2 class="f3 fw4 pa3 mv0">Work</h2>
+
+        <div class="cf pa2">
+
+
+          <div class="fl w-50 w-25-m w-20-l pa2">
+            <img src={FabrikantImg} class="db w-100 br2 br--top img-resize" alt="fabrikant img"/>
+                        <div class="pa2 ph3-ns pb3-ns">
+                            <div class="dt w-100 mt1">
+                                <div class="dtc">
+                                    <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
+                                        <h1 class="f5 f4-ns mv0">LIVE</h1>
+                                    </a>
+                                </div>
+                                <div class="dtc tr">
+                                    <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
+                                    <h2 class="f5 mv0">Code</h2>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="f6 lh-copy measure mt2 mid-gray">
+                                A client web app for Fabrikant Jewlers to input client and significant others details in their database.
+                                Can add/edit/delete a client and their siginifiant other, as well as add notes to each.
+                            </p>
+                        </div>
                 </div>
-                <a href="#0" class="ph2 ph0-ns pb3 link db">
-                    <h3 class="f5 f4-ns mb0 black-90">Fabrikant Jewlers</h3>
-                    <h3 class="f6 f5 fw4 mt2 black-60">Client Catalog Page</h3>
-                </a>
-            </article>
-            </a>
-            <a target="_blank" href="https://youtubereactclone.netlify.com">
-                <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
-                    <div class="aspect-ratio aspect-ratio--1x1">
-                        <img src={YoutubeImg}
-                            class="db bg-center cover aspect-ratio--object" />
-                    </div>
-                    <a href="#0" class="ph2 ph0-ns pb3 link db">
-                        <h3 class="f5 f4-ns mb0 black-90">Youtube Clone</h3>
-                        <h3 class="f6 f5 fw4 mt2 black-60">Youtube API, React.js</h3>
-                    </a>
-                </article>
-            </a>
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.rhythmnewmedia.android.e&hl=en">
-                <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
-                    <div class="aspect-ratio aspect-ratio--1x1">
-                        <img src={Eimg}
-                            class="db bg-center cover aspect-ratio--object" />
-                    </div>
-                    <a href="#0" class="ph2 ph0-ns pb3 link db">
-                        <h3 class="f5 f4-ns mb0 black-90">E! News for Android/iOS</h3>
-                        <h3 class="f6 f5 fw4 mt2 black-60">React-Native Mobile App</h3>
-                    </a>
-                </article>
-            </a>
-            <a target="_blank" href="https://github.com/krtb/Crypto_Crash">
-                <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
-                    <div class="aspect-ratio aspect-ratio--1x1">
-                        <img src={Cryptimg}
-                            class="db bg-center cover aspect-ratio--object" />
-                    </div>
-                    <a href="#0" class="ph2 ph0-ns pb3 link db">
-                        <h3 class="f5 f4-ns mb0 black-90">Crypto_Crash</h3>
-                        <h3 class="f6 f5 fw4 mt2 black-60">Ruby app</h3>
-                    </a>
-                </article>
-            </a>
-            <a target="_blank" href="https://github.com/krtb/InforMee">
-                <article class="fl w-100 w-50-m  w-25-ns pa2-ns">
-                    <div class="aspect-ratio aspect-ratio--1x1">
-                        <img src={Informee}
-                            class="db bg-center cover aspect-ratio--object" />
-                    </div>
-                    <a href="#0" class="ph2 ph0-ns pb3 link db">
-                        <h3 class="f5 f4-ns mb0 black-90">InforMee</h3>
-                        <h3 class="f6 f5 fw4 mt2 black-60">React, Rails</h3>
-                    </a>
-                </article>
-            </a>
-        </section>
+
+
+          <div class="fl w-50 w-25-m w-20-l pa2">
+            <img src={YoutubeImg} class="db w-100 br2 br--top img-resize" alt="fabrikant img" />
+            <div class="pa2 ph3-ns pb3-ns">
+              <div class="dt w-100 mt1">
+                <div class="dtc">
+                  <a name="work" target="_blank" href="https://youtubereactclone.netlify.com">
+                    <h1 class="f5 f4-ns mv0">LIVE</h1>
+                  </a>
+                </div>
+                <div class="dtc tr">
+                  <a name="work" target="_blank" href="https://github.com/krtb/YoutubeReactClone">
+                    <h2 class="f5 mv0">Code</h2>
+                  </a>
+                </div>
+              </div>
+              <p class="f6 lh-copy measure mt2 mid-gray">
+                A clone of the Youtube Search functionality built with React and the YouTube Search API.
+                On page load renders a list of videos, can select and play a main video after inputting text in the search bar.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="fl w-50 w-25-m w-20-l pa2">
+            <img src={Eimg} class="db w-100 br2 br--top img-resize" alt="fabrikant img" />
+            <div class="pa2 ph3-ns pb3-ns">
+              <div class="dt w-100 mt1">
+                <div class="dtc">
+                  <a name="work" target="_blank" href="https://play.google.com/store/apps/details?id=com.rhythmnewmedia.android.e&hl=en">
+                    <h1 class="f5 f4-ns mv0">App Store</h1>
+                  </a>
+                </div>
+                {/* <div class="dtc tr">
+                  <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
+                    <h2 class="f5 mv0">Code</h2>
+                  </a>
+                </div> */}
+              </div>
+              <p class="f6 lh-copy measure mt2 mid-gray">
+                 A clone of the Youtube Search functionality built with React and the YouTube Search API.
+                 On page load renders a list of videos, can select and play a main video after inputting text in the search bar.
+                 Built With: Recat-Native / NBC APIs
+              </p>
+            </div>
+          </div>
+
+
+          <div class="fl w-50 w-25-m w-20-l pa2">
+            <img src={Cryptimg} class="db w-100 br2 br--top img-resize" alt="fabrikant img" />
+            <div class="pa2 ph3-ns pb3-ns">
+              <div class="dt w-100 mt1">
+                {/* <div class="dtc">
+                  <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
+                    <h1 class="f5 f4-ns mv0">LIVE</h1>
+                  </a>
+                </div> */}
+                <div class="dtc tr">
+                  <a name="work" target="_blank" href="https://github.com/krtb/Crypto_Crash">
+                    <h2 class="f5 mv0">Code</h2>
+                  </a>
+                </div>
+              </div>
+              <p class="f6 lh-copy measure mt2 mid-gray">
+                CRYPTO_CRASH is a turn-based game placing you in the role of an amateur cryptocurrency trader looking to raise enough money to escape to Canada.
+                Built With: Ruby / Sinatra / Active Record / SQLite3
+              </p>
+            </div>
+          </div>
+
+          <div class="fl w-50 w-25-m w-20-l pa2">
+            <img src={Informee} class="db w-100 br2 br--top img-resize" alt="fabrikant img" />
+            <div class="pa2 ph3-ns pb3-ns">
+              <div class="dt w-100 mt1">
+                {/* <div class="dtc">
+                  <a name="work" target="_blank" href="http://fabrikant.eachscape.com/">
+                    <h1 class="f5 f4-ns mv0">LIVE</h1>
+                  </a>
+                </div> */}
+                <div class="dtc tr">
+                  <a name="work" target="_blank" href="https://github.com/krtb/InforMee">
+                    <h2 class="f5 mv0">Code</h2>
+                  </a>
+                </div>
+              </div>
+              <p class="f6 lh-copy measure mt2 mid-gray">
+                Informee seeks to shed some light on American politics by allowing users to view the newest bills being introduced to the House.
+                Built With: React / Rails / PostGreSQL
+                            </p>
+            </div>
+          </div>
+
+        </div>
+
+      </article>
     );
 };
 
