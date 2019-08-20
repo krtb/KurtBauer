@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../../common/images/nodoubt.jpg'
-import PDF from '../../../kurtbauer_resume_5.17.19.pdf'
+import PDF from '../../../KurtBauer.8.20.19.pdf'
 
 export default () => (
   <nav className="db dt-l w-100 border-box pa3 ph5-l">
