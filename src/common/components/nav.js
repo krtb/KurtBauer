@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../common/images/nodoubt.jpg'
+import Logo from '../../common/images/kurtOct2018.jpg'
 import PDF from '../../../KurtBauer.8.20.19.pdf'
 
 export default () => (
