@@ -1,6 +1,8 @@
 
 # ADDITIONAL FILES TO IGNORE
 .env*
+# ---> ADDED LOCK FILES BACK TO IGNORE UNTIL NETLIFY IS UP <---
+
 
 # REACT.JS FILE TO IGNORE
 
@@ -44,7 +46,7 @@ packages/react-devtools-shell/dist
 # GATSBY.JS FILES TO IGNORE
 
 packages/*/yarn.lock
-# packages/*/package-lock.json
+packages/*/package-lock.json
 
 # Logs
 logs
@@ -98,7 +100,7 @@ node_modules/
 .serverless/
 
 # lock files
-# yarn.lock
+yarn.lock
 # package-lock.json
 
 # starters are special; we want to persist the lock files
