@@ -1,6 +1,6 @@
 
 # ADDITIONAL FILES TO IGNORE
-.env
+*.env*
 
 # REACT.JS FILE TO IGNORE
 
