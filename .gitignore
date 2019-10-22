@@ -44,7 +44,7 @@ packages/react-devtools-shell/dist
 # GATSBY.JS FILES TO IGNORE
 
 packages/*/yarn.lock
-packages/*/package-lock.json
+# packages/*/package-lock.json
 
 # Logs
 logs
@@ -98,8 +98,8 @@ node_modules/
 .serverless/
 
 # lock files
-yarn.lock
-package-lock.json
+# yarn.lock
+# package-lock.json
 
 # starters are special; we want to persist the lock files
 !starters/*/package-lock.json
