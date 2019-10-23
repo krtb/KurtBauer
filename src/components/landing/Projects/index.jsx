@@ -15,7 +15,7 @@ export const Projects = () => {
 	} = useStaticQuery(graphql`
 		{
 			github {
-				repositoryOwner(login: "krtb") {
+				repositoryOwner(login: "smakosh") {
 					repositories(
 						first: 8
 						orderBy: { field: STARGAZERS, direction: DESC }

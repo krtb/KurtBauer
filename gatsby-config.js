@@ -30,7 +30,7 @@ module.exports = {
 				fieldName: 'github',
 				url: 'https://api.github.com/graphql',
 				headers: {
-					Authorization: `Bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
+					Authorization: `bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
 				},
 				fetchOptions: {},
 			},
