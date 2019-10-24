@@ -67,7 +67,7 @@ module.exports = {
 				},
 			},
 		},*/
-		{
+		/*{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
 				name: config.defaultTitle,
@@ -78,7 +78,7 @@ module.exports = {
 				display: 'minimal-ui',
 				icon: './static/favicon/favicon-512.png',
 			},
-		},
+		},*/
 		'gatsby-plugin-offline',
 		{
 			resolve: `gatsby-plugin-alias-imports`,
