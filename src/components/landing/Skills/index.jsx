@@ -11,10 +11,12 @@ export const Skills = () => (
 				<img src={dev} alt="I’m John and I’m a Backend & Devops engineer!" />
 			</Thumbnail>
 			<Details>
-				<h1>Hi There!</h1>
+				<h1> I'm an interdisciplinary engineer, binding analogue ideas to the digital landscape. </h1>
+
 				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry. Lorem Ipsum has been the industry’s standard dummy.
+
+			  Whether it's your company, your startup, or you're simply an entrepenuer looking to evolve, I will help you cultivate your ideas.
+
 				</p>
 				<Button as={AnchorLink} href="#contact">
 					Hire me
