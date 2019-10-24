@@ -12,13 +12,13 @@ export const Projects = () => {
 				repositories: { edges },
 			},
 		},
+
 	} = useStaticQuery(graphql`
 		{
 			github {
-				repositoryOwner(login: "smakosh") {
+				repositoryOwner(login: "krtb") {
 					repositories(
 						first: 8
-						orderBy: { field: STARGAZERS, direction: DESC }
 					) {
 						edges {
 							node {
@@ -26,9 +26,6 @@ export const Projects = () => {
 								name
 								url
 								description
-								stargazers {
-									totalCount
-								}
 								forkCount
 							}
 						}
@@ -57,7 +54,7 @@ export const Projects = () => {
 							<Stats>
 								<div>
 									<img src={starIcon} alt="stars" />
-									<span>{node.stargazers.totalCount}</span>
+									{/*<span>{node.stargazers.totalCount}</span>*/}
 								</div>
 								<div>
 									<img src={forkIcon} alt="forks" />
