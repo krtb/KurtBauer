@@ -12,13 +12,12 @@ export const Projects = () => {
 				repositories: { edges },
 			},
 		},
-
 	} = useStaticQuery(graphql`
 		{
 			github {
 				repositoryOwner(login: "krtb") {
 					repositories(
-						first: 8
+						last: 6
 					) {
 						edges {
 							node {
@@ -27,6 +26,7 @@ export const Projects = () => {
 								url
 								description
 								forkCount
+								viewerHasStarred
 							}
 						}
 					}
