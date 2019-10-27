@@ -1,22 +1,22 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Card } from 'Common'
-import starIcon from 'Static/icons/star.svg'
-import forkIcon from 'Static/icons/fork.svg'
+import linkIcon from 'Static/icons/iconmonstr-link-1.svg'
+import updateIcon from 'Static/icons/iconmonstr-synchronization-11.svg'
 import { Wrapper, Grid, Item, Content, Stats } from './styles'
 
 export const Projects = () => {
 	const {
 		github: {
 			repositoryOwner: {
-				repositories: { edges },
+				pinnedRepositories: { edges },
 			},
 		},
 	} = useStaticQuery(graphql`
 		{
 			github {
 				repositoryOwner(login: "krtb") {
-					repositories(
+					pinnedRepositories(
 						last: 6
 					) {
 						edges {
@@ -25,7 +25,8 @@ export const Projects = () => {
 								name
 								url
 								description
-								forkCount
+								updatedAt
+								homepageUrl
 								viewerHasStarred
 							}
 						}
@@ -34,6 +35,7 @@ export const Projects = () => {
 			}
 		}
 	`)
+
 	return (
 		<Wrapper as={Container} id="projects">
 			<h2>Projects</h2>
@@ -53,14 +55,19 @@ export const Projects = () => {
 							</Content>
 							<Stats>
 								<div>
-									<img src={starIcon} alt="stars" />
-									{/*<span>{node.stargazers.totalCount}</span>*/}
-								</div>
-								<div>
-									<img src={forkIcon} alt="forks" />
-									<span>{node.forkCount}</span>
+									<img src={updateIcon} alt="forks" />
+									<span>{
+										new Date(node.updatedAt).toDateString()
+									}</span>
 								</div>
 							</Stats>
+							 <Stats>
+								{node.homepageUrl?<div>
+									<img src={linkIcon} alt="stars" />
+									<span>{node.homepageUrl}</span>
+								</div> : null}
+							</Stats>
+
 						</Card>
 					</Item>
 				))}

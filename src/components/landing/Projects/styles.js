@@ -51,6 +51,8 @@ export const Stats = styled.div`
 
 		img {
 			margin: 0;
+			height: 15px;
+			padding-bottom: 8px;
 		}
 
 		span {
