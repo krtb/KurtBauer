@@ -27,7 +27,7 @@ module.exports = {
 		zipCode: 'ZipCode',
 	},
 	contact: {
-		email: 'email',
+		email: 'kurt.bauer55@gmail.com',
 		phone: 'phone number',
 	},
 	foundingDate: '2018',
