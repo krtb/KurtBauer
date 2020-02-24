@@ -33,7 +33,7 @@
     "react-dom": "^16.8.6",
     "react-google-recaptcha": "^1.0.5",
     "react-helmet": "^5.2.0",
-    "sharp": "^0.23.1",
+    "sharp": "^0.24.1",
     "styled-components": "^4.1.3",
     "tsutils": "^3.17.1",
     "typescript": "^3.6.4",
